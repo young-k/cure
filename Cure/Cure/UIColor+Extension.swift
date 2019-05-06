@@ -16,6 +16,7 @@ extension UIColor {
     static let darkGray = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1.0)
     static let happyYellow = UIColor(red: 255/255, green: 226/255, blue: 119/255, alpha: 1.0)
     static let lightGray = UIColor(red: 209/255, green: 209/255, blue: 209/255, alpha: 1.0)
+    static let lineGray = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1.0)
     static let searchBarGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1.0)
     static let shaleGray = UIColor(red: 195/255, green: 195/255, blue: 195/255, alpha: 1.0)
     static let sleetGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 1.0)

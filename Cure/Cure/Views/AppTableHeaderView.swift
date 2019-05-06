@@ -25,7 +25,6 @@ class AppTableHeaderView: UIView {
         
         numTestsLabel = UILabel()
         numTestsLabel.font = UIFont.avenirMedium?.withSize(20)
-        numTestsLabel.text = "6"
         self.addSubview(numTestsLabel)
         
         footerView = UIView()
@@ -49,6 +48,10 @@ class AppTableHeaderView: UIView {
             make.top.equalTo(testsLabel.snp.bottom).offset(4)
             make.trailing.leading.equalToSuperview().inset(34)
         }
+    }
+    
+    func configure(for numTests: Int) {
+        numTestsLabel.text = "\(numTests)"
     }
     
     required init?(coder aDecoder: NSCoder) {

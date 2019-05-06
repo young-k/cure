@@ -17,6 +17,7 @@ class NetworkManager {
     
     let allAppsURL = "http://35.185.95.216/api/apps/"
     let allTestsURL = "http://35.185.95.216/api/tests/"
+    let runTestsNowURL = "http://35.185.95.216/api/results-now/"
     
     func getImage(url: String, completion: @escaping ((UIImage) -> Void)) {
         Alamofire.request(url).validate().responseData { response in
@@ -42,6 +43,18 @@ class NetworkManager {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func runTestsNow(id: Int, completion: @escaping ((Bool) -> Void)) {
+        Alamofire.request(runTestsNowURL + "\(id)/").validate().responseData { response in
+            switch response.result {
+            case .success(let data):
+                completion(true)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(false)
             }
         }
     }

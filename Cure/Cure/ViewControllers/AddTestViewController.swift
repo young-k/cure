@@ -32,7 +32,17 @@ class AddTestViewController: UIViewController {
     var footerView: UIView!
     
     var methodType: String!
-
+    var appName: String!
+    
+    init(appName: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.appName = appName
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +54,7 @@ class AddTestViewController: UIViewController {
         view.addSubview(addTestButton)
         
         addTestButtonLabel = UILabel()
-        addTestButtonLabel.text = "Add Test to Ithaca Transit"
+        addTestButtonLabel.text = "Add Test to \(appName ?? "App")"
         addTestButtonLabel.textColor = .white
         addTestButtonLabel.font = UIFont.avenirDemiBold?.withSize(20)
         view.addSubview(addTestButtonLabel)
